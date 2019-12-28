@@ -1,0 +1,13 @@
+# Temp project folders
+.idea
+.logs
+target
+
+# IDEA files
+*.iml
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
