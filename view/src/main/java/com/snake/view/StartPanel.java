@@ -1,6 +1,6 @@
 //package com.snake;
 //
-//import com.snake.imagepanel.JPanelWithBackground;
+//import com.snake.view.imagepanel.JPanelWithBackground;
 //
 //import javax.imageio.ImageIO;
 //import javax.swing.*;

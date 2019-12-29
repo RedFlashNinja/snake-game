@@ -1,7 +1,7 @@
 package com.snake.listener;
 
 import com.snake.Constants;
-import com.snake.GamePanel;
+import com.snake.view.GamePanel;
 import com.snake.collision.SnakeCollision;
 import com.snake.managers.GameManagerImpl;
 import com.snake.managers.frog.FrogManagerImpl;

@@ -17,8 +17,7 @@
     <properties>
         <java.version>1.8</java.version>
         <lombok.version>1.18.10</lombok.version>
-        <slf4j.version>1.7.29</slf4j.version>
-        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
+        <logging.version>2.13.0</logging.version>
         <spring.version>5.2.2.RELEASE</spring.version>
         <maven-compiler-plugin.version>3.6.2</maven-compiler-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
@@ -34,10 +33,21 @@
                 <version>${lombok.version}</version>
                 <scope>provided</scope>
             </dependency>
+
             <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${logging.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${logging.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>${logging.version}</version>
             </dependency>
 
             <dependency>
@@ -46,15 +56,6 @@
                 <version>3.4.2</version>
             </dependency>
 
-            <dependency>
-                <groupId>com.fasterxml.jackson.dataformat</groupId>
-                <artifactId>jackson-dataformat-yaml</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-autoconfigure</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-beans</artifactId>
@@ -69,11 +70,6 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
                 <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-log4j2</artifactId>
-                <version>${spring-boot.version}</version>
             </dependency>
 
             <dependency>

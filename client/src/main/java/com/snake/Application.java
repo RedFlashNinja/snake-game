@@ -1,12 +1,17 @@
 package com.snake;
 
-import org.springframework.boot.SpringBootConfiguration;
-import org.springframework.boot.builder.SpringApplicationBuilder;
+import com.snake.managers.GameManager;
+import com.snake.view.GameFrame;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-@SpringBootConfiguration
 public class Application {
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(ClientConfig.class).headless(false).run(args);
+        ApplicationContext context = new AnnotationConfigApplicationContext(ClientConfig.class);
+        GameFrame mainFrame = context.getBean(GameFrame.class);
+        GameManager gameManager = context.getBean(GameManager.class);
+        mainFrame.setVisible(true);
+        gameManager.startGame();
     }
 }

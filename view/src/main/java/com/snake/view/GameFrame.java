@@ -1,6 +1,7 @@
-package com.snake;
+package com.snake.view;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 public class GameFrame extends JFrame {
 
