@@ -1,9 +1,9 @@
 This project is controlled by [Maven](https://maven.apache.org/).
 #
 Project  includes maven wrapper set to v3.6.3  
-To build the project use `mvn clean install` or `mvnw clean install` from the root directory.  
+To build the project use `./mvn clean install` or `./mvnw clean install` from the root directory.  
 #
-To run the game use `mvn exec:java -pl client` from the root directory.
+To run the game use `./mvnw exec:java -pl client` from the root directory.
 #
 Default window parameters:
 ```
@@ -16,4 +16,4 @@ snake.length=3
 snake.movement.speed=50
 logging.level.root=info
 ```
-Parameters can be changed using arguments `mvn exec:java -pl client -Dsnake.length=100 -Dfrog.number=100`.
+Parameters can be changed using arguments `./mvnw exec:java -pl client -Dsnake.length=100 -Dfrog.number=100`.

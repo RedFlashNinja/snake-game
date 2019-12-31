@@ -1,6 +1,10 @@
 package com.snake.managers;
 
 import com.snake.Constants;
+import com.snake.hibernate.HibernateSessionFactory;
+import com.snake.hibernate.UpdateDB;
+import com.snake.io.entity.PlayerEntity;
+import com.snake.io.repository.PlayerRepository;
 import com.snake.listener.FrogPosition;
 import com.snake.managers.frog.FrogManager;
 import com.snake.managers.snake.SnakeManager;
@@ -8,6 +12,7 @@ import com.snake.model.game.GameField;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +33,10 @@ public class GameManagerImpl implements GameManager {
     private boolean gameLost;
     private ScheduledFuture<?> waitingForLoading;
 
+    private UpdateDB updateDB;
+
+    private PlayerRepository playerRepository;
+
     @Autowired
     public void setSnakeManager(SnakeManager snakeManager) {
         this.snakeManager = snakeManager;
@@ -46,6 +55,16 @@ public class GameManagerImpl implements GameManager {
     @Autowired
     public void setTaskScheduler(TaskScheduler taskScheduler) {
         this.taskScheduler = taskScheduler;
+    }
+
+    @Autowired @Lazy
+    public void setUpdateDB(UpdateDB updateDB) {
+        this.updateDB = updateDB;
+    }
+
+    @Autowired @Lazy
+    public void setPlayerRepository(PlayerRepository playerRepository) {
+        this.playerRepository = playerRepository;
     }
 
     public GameManagerImpl(@Value("${field.width}") float fieldWidth,
@@ -68,6 +87,8 @@ public class GameManagerImpl implements GameManager {
 
     @Override
     public void stopGame() {
+        updateDB.saveResults(playerRepository.findByNickName("newPlayer"));
+        HibernateSessionFactory.shutdown();
         log.info("Stopping the game...");
         this.gameStopped = true;
     }
