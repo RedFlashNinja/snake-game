@@ -32,10 +32,6 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-commons</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
         </dependency>
 
@@ -53,16 +49,6 @@
         </dependency>
 
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
@@ -70,12 +56,17 @@
         <dependency>
             <groupId>com.snake</groupId>
             <artifactId>model</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${version}</version>
         </dependency>
         <dependency>
             <groupId>com.snake</groupId>
             <artifactId>view</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.snake</groupId>
+            <artifactId>database</artifactId>
+            <version>${version}</version>
         </dependency>
 
     </dependencies>
