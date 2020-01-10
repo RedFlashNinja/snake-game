@@ -10,19 +10,22 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>client</module>
+        <module>database</module>
         <module>model</module>
         <module>view</module>
+        <module>web-ui</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
         <lombok.version>1.18.10</lombok.version>
         <logging.version>2.13.0</logging.version>
-        <spring.version>5.2.2.RELEASE</spring.version>
-        <maven-compiler-plugin.version>3.6.2</maven-compiler-plugin.version>
+        <springframework.version>5.2.2.RELEASE</springframework.version>
+        <spring.version>2.2.3.RELEASE</spring.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <junit.version>4.12</junit.version>
-        <mainClass>com.snake.Application</mainClass>
+        <mainClass>com.snake.client.Application</mainClass>
     </properties>
 
     <dependencyManagement>
@@ -59,30 +62,55 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-beans</artifactId>
-                <version>${spring.version}</version>
+                <version>${springframework.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-core</artifactId>
-                <version>${spring.version}</version>
+                <version>${springframework.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
-                <version>${spring.version}</version>
+                <version>${springframework.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-commons</artifactId>
-                <version>2.2.3.RELEASE</version>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${springframework.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>2.9.2</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>2.9.2</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-jpa</artifactId>
-                <version>2.2.3.RELEASE</version>
+                <version>${spring.version}</version>
             </dependency>
 
-
+            <dependency>
+                <groupId>org.springframework.hateoas</groupId>
+                <artifactId>spring-hateoas</artifactId>
+                <version>1.0.2.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.plugin</groupId>
+                <artifactId>spring-plugin-core</artifactId>
+                <version>2.0.0.RELEASE</version>
+            </dependency>
 
             <dependency>
                 <groupId>mysql</groupId>
@@ -94,6 +122,12 @@
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-entitymanager</artifactId>
                 <version>5.4.10.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.modelmapper</groupId>
+                <artifactId>modelmapper</artifactId>
+                <version>2.3.6</version>
             </dependency>
 
             <dependency>
@@ -153,7 +187,7 @@
                         <arguments>
                             <argument>-jar</argument>
                             <argument>
-                                ${basedir}/client/target/controller-${project.version}-spring-boot.jar
+                                ${basedir}/client/target/client-${project.version}.jar
                             </argument>
                         </arguments>
                     </configuration>

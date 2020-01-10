@@ -15,7 +15,7 @@
         <dependency>
             <groupId>com.snake</groupId>
             <artifactId>model</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${version}</version>
         </dependency>
     </dependencies>
 
