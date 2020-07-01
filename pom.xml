@@ -19,7 +19,7 @@
     <properties>
         <java.version>1.8</java.version>
         <lombok.version>1.18.10</lombok.version>
-        <logging.version>2.13.0</logging.version>
+        <logging.version>2.13.3</logging.version>
         <springframework.version>5.2.2.RELEASE</springframework.version>
         <spring.version>2.2.3.RELEASE</spring.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
