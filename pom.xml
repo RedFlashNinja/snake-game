@@ -24,7 +24,7 @@
         <spring.version>2.2.3.RELEASE</spring.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <mainClass>com.snake.client.Application</mainClass>
     </properties>
 
